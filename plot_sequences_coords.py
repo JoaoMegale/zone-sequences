@@ -1,5 +1,5 @@
 """
-arquivo de entrada: df das sequencias gerado por sequences.py
+arquivo de entrada: df de todas as ações gerado por sequences.py
 
 plota as sequencias
 
