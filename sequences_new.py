@@ -218,31 +218,3 @@ df_sequences['coordenadas'] = coordenadas_seq
 
 #df.to_csv('df_actions.csv')
 #df_sequences.to_csv('df_sequences.csv')
-#df_sequences.to_csv('new_sequences.csv')
-
-pitch = Pitch(pitch_type='uefa', pitch_length=105, pitch_width=68)
-fig, ax = pitch.draw(figsize=(10, 7))
-colors = ['blue', 'red', 'green']
-
-X = [20, 36.25, 52.5, 68.75, 85]
-Y = [14, 25, 43, 54]
-for x in X:
-    linha = plt.axvline(x, 0, 1, linestyle="--", color='lightgray')
-    ax.add_line(linha)
-for y in Y:
-    if y in [25, 43]:
-        linha = plt.axhline(y, 0.21, 1, linestyle="--", color='lightgray')
-        ax.add_line(linha)
-    else:
-        linha = plt.axhline(y, 0, 1, linestyle="--", color='lightgray')
-        ax.add_line(linha)
-        
-for i in range (len(1, df_sequences['coordenadas'][0])):
-    x = df_sequences['coordenadas'][0][i-1][0]
-    y = df_sequences['coordenadas'][0][i-1][1]
-    dx = df_sequences['coordenadas'][0][i][0]
-    dy = df_sequences['coordenadas'][0][i][1]
-    arrow = plt.Arrow(x, y, dx, dy, width=1, color='blue')
-    ax.add_patch(arrow)
-    
-plt.show()
